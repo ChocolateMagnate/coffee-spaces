@@ -12,16 +12,16 @@
       <button class="menu">Homepage</button>
       <button class="menu"><a href="">Development</a></button>
     </nav></header>
-    <main class="login">
-      <form method="post">
+    <main>
+      <form class="login" method="post">
         <h1 id="capital">Login</h1>
         <label for="username">Username:</label>
-        <input type="text" name="username" id="username">
+        <input [(ngModel)]="username" type="text" name="username" id="username">
         <label for="position">Position</label>
-        <input type="text" name="position" id="position">
+        <input [(ngModel)]="position" type="text" name="position" id="position">
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-        <input type="submit" value="Login">
+        <input [(ngModel)]="password" type="password" name="password" id="password">
+        <input type="submit" value="Login" (click)="onLogin()">
       </form>
     </main>
     <footer>
