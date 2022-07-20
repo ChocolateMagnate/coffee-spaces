@@ -1,0 +1,49 @@
+header {
+    background-color: darkblue;
+    padding: 20px;
+    text-align: right;
+    font-size: 1.5em;
+    list-style: none;
+}
+
+main {
+    background-color: yellow;
+    padding: 40px;
+    height: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+footer {
+    background-color: darkpurple;
+    padding: 20px;
+    text-align: left;
+}
+
+.login {
+    background: white;
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    grid-template-areas:
+        "header1 header1"
+        "username1 username2"
+        "position1 position2"
+        "password1 password2"
+}
+
+#capital {
+    grid-area: header;
+    column-fill: 2;
+    font-size: 25px;
+    color: black;
+}
+
+.menu {
+    background: transparent;
+    border-width: 4px;
+    border-style: solid;
+    color: white;
+}
