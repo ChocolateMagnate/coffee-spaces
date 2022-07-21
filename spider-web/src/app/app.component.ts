@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Input } from '@angular/core';
-//import { AuthService } from './auth.service';
 /*TO-DO:
 1. Resolve AuthService import;
 2. Implement login-system;
@@ -22,6 +21,6 @@ export class AppComponent {
   @Input() password: string;*/
 
   onLogin(): void {
-
+    this.authService.login(this.username, this.password);
   }
 }
