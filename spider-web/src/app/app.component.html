@@ -6,23 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/spider-web/src/app/app.component.css">
     <title>Spider Web Homepage</title>
+    <base href="/">
   </head>
   <body>
     <header><nav>
-      <button class="menu">Homepage</button>
-      <button class="menu"><a href="">Development</a></button>
+      <button id="about-us">About us</button>
+      <button id="development"><a href="http://localhost:4200/Development">Development details</a></button>
     </nav></header>
     <main>
+      <nav>
+        <h1 id="welcome">Welcome to the Spider Web!</h1>
+        <p id="description">A place for IT workers to connect and build applications that will change the world together.</p>  
+      </nav>
+     <nav>
+      <h2 style="align-items: left">Features:</h2>
+      <ul>
+        <li>closed pasteric enviornment for a team where your work is safe</li>
+        <li>code hosting and rich syntax highlighting</li>
+        <li>steam of bug reports</li>
+        <li>quick and efficient notifications between the team to notify about one's progress</li>
+        <li>rich customability</li>
+      </ul>
+     </nav>
+     <nav>
       <form class="login" method="post">
-        <h1 id="capital">Login</h1>
+        <h1 id="capital">Join your team now</h1>
         <label for="username">Username:</label>
-        <input [(ngModel)]="username" type="text" name="username" id="username">
+        <input #usernameInput type="text" name="username"
+          id="username" (input)="username = usernameInput.value">
         <label for="position">Position</label>
-        <input [(ngModel)]="position" type="text" name="position" id="position">
+        <input #positionInput type="text" name="position"
+          id="position" (input)="position = positionInput.value">
         <label for="password">Password:</label>
-        <input [(ngModel)]="password" type="password" name="password" id="password">
+        <input #passwordInput type="password" name="password"
+          id="password" (input)="password = passwordInput.value">
         <input type="submit" value="Login" (click)="onLogin()">
       </form>
+     </nav>
+     <nav></nav>
+      <p>Check!</p>
     </main>
     <footer>
       <p>Copyright Vladyslav Korol

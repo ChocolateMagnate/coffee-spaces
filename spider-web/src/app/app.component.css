@@ -1,19 +1,54 @@
+/*Top of the page */
 header {
-    background-color: darkblue;
+    background-color: lightblue;
     padding: 20px;
-    text-align: right;
+    text-align: space-between;
     font-size: 1.5em;
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-main {
-    background-color: lightgray;
-    padding: 40px;
-    height: 500px;
+#about-us {
+    background-color: lightblue;
+    height: 40px;
+    padding: 2px;
+    text-align: center;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-items: center;
+    list-style: none;
+    border-style: none;
+    padding-right: 0px;
+}
+#about-us:hover {
+    background-color: lightgreen;
+}
+
+#development {
+    background-color: lightblue;
+    height: 40px;
+    padding: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    list-style: none;
+    border-style: none;
+}
+
+#development:hover {
+    background-color: lightgreen;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -21,6 +56,18 @@ footer {
     color: aqua;
     padding: 20px;
     text-align: left;
+}
+
+form {
+    background-color: lightgray;
+    border-color: gainsboro;
+    padding: 40px;
+    height: 200px;
+    width: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
 }
 
 .login {
@@ -31,16 +78,31 @@ footer {
     flex-direction: column;
 }
 
-#capital {
-    grid-area: header;
-    column-fill: 2;
-    font-size: 25px;
-    color: black;
-}
-
 .menu {
     background: transparent;
     border-width: 4px;
     border-style: solid;
     color: white;
+}
+
+#capital {
+    font-size: 25px;
+    color: black;
+}
+
+#welcome {
+    font-size: 25px;
+    font-weight: 700;
+    color: pink;
+    align-items: center;
+    justify-content: center;
+}
+
+#description {
+    color: black;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
 }
