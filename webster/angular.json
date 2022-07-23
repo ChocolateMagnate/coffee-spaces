@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "spider-web": {
+    "webster": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/spider-web",
+            "outputPath": "dist/webster",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "spider-web:build:production"
+              "browserTarget": "webster:build:production"
             },
             "development": {
-              "browserTarget": "spider-web:build:development"
+              "browserTarget": "webster:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "spider-web:build"
+            "browserTarget": "webster:build"
           }
         },
         "test": {
@@ -99,6 +99,6 @@
     }
   },
   "cli": {
-    "analytics": "7c43c687-85f9-4dc5-9571-15fcf44daf26"
+    "analytics": "74929473-2801-4cd9-8e3c-3b929ff82969"
   }
 }
