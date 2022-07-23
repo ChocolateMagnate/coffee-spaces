@@ -8,8 +8,55 @@
     <base href="/">
   </head>
   <body>
-    <button routerLink = '/home'>View the homepage</button>
-    <button routerLink = '/profile'>View your profile</button>
-    <router-outlet id="animation"></router-outlet>
+    <header>
+      <button class="header-item">Homepage</button>.
+      <button class="header-item" routingLink="/development">Development</button>
+    </header>
+    <main>
+      <nav id="grad1">
+        <h1 id="welcome"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </nav>
+      <nav id="grad2">
+        <h3 class="welcome-text">You are not a worker. . .</h3>
+        <p class="welcome-text">You are:</p>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </nav>
+      <nav id="grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </nav>
+      <nav id="grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </nav>
+    </main>
   </body>
+  <footer>
+    <ul>
+      <li><p>Spider Web © 2022</p></li>
+      <li><p>© Vlad Korol (<a href="https://github.com/ChocolateMagnate">@ChocolateMagnate</a>)</p></li>
+    </ul>
+  </footer>
 </html>

@@ -1,10 +1,88 @@
-#animation {
-    animation-name: [appear];
-    animation-duration: 10s;
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: lightblue
 }
 
-@keyframes appear {
-    0% { opacity: 0; background-color: lightblue; }
-    50% { opacity: 0.5; background-color: blue; }
-    100% { opacity: 1; background-color: indigo; }
+.header-item {
+    font-size: large;
+    font-weight: bolder;
+    background-color: lightblue;
+    margin: 2%;
+    padding: 2%;
+    border-style: none;
+}
+
+.header-item:hover {
+    background-color: lightgreen;
+}
+body {
+    margin: 0%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grad1 {
+    background: linear-gradient(to bottom, lightblue, lightgreen);
+}
+
+#grad2 {
+    background: lightgreen;
+    width: 100%;
+}
+
+#grad3 {
+    background: linear-gradient(to bottom, lightgreen, pink);
+}
+
+#grad4 {
+    background-color: pink;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: blanchedalmond;
+    padding: 1rem;
+    margin-left: 23%;
+    border-radius: 0.5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-style: none;
+}
+
+#welcome {
+    font-size: 32px;
+    font-weight: bolder;
+    color: rgb(206, 97, 152);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.welcome-text {
+    font-size: 19px;
+    font-weight: 300;
+    color: rgb(145, 61, 103);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer {
+    background-color: black;
+    padding: 0.5rem 1rem;
+    color: blanchedalmond;
 }
