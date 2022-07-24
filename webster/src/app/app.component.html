@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
-    <base href="/">
+    <base href="/"> <!-- This is the base URL for the application. -->
   </head>
   <body>
     <header>
       <button class="header-item">Homepage</button>.
-      <button class="header-item" routingLink="/development">Development</button>
+      <button class="header-item" (onclick)=" onDevelopment">Development</button>
     </header>
+    <router-outlet></router-outlet>
     <main>
       <nav id="grad1">
         <h1 id="welcome"><i>Welcome to Spider Web!</i></h1>

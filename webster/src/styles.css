@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: lightblue
+}
+
+.header-item {
+    font-size: large;
+    font-weight: bolder;
+    background-color: lightblue;
+    margin: 2%;
+    padding: 2%;
+    border-style: none;
+}
+
+.header-item:hover {
+    background-color: lightgreen;
+}

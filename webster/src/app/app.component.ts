@@ -11,6 +11,9 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   title = 'webster';
   constructor(private router: Router, /*private authService: AuthService*/) {
-    this.router.navigate(['/home']);
+    console.log("App component loaded");
+  }
+  onDevelopment() {
+    this.router.navigate(['/development']);
   }
 }

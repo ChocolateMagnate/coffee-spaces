@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DevelopmentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log("Development component loaded");
+   }
 
   ngOnInit(): void {
   }

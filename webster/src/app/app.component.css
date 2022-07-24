@@ -1,23 +1,4 @@
-header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0.5rem 1rem;
-    background-color: lightblue
-}
 
-.header-item {
-    font-size: large;
-    font-weight: bolder;
-    background-color: lightblue;
-    margin: 2%;
-    padding: 2%;
-    border-style: none;
-}
-
-.header-item:hover {
-    background-color: lightgreen;
-}
 body {
     margin: 0%;
 }
@@ -29,6 +10,7 @@ main {
 
 #grad1 {
     background: linear-gradient(to bottom, lightblue, lightgreen);
+    width: 100%;
 }
 
 #grad2 {
@@ -37,11 +19,11 @@ main {
 }
 
 #grad3 {
-    background: linear-gradient(to bottom, lightgreen, pink);
+    background: lightgreen;
 }
 
 #grad4 {
-    background-color: pink;
+    background-color: blanchedalmond;
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -51,6 +33,8 @@ form {
     background-color: blanchedalmond;
     padding: 1rem;
     margin-left: 23%;
+    margin-top: 1%;
+    border-style: solid;
     border-radius: 0.5rem;
     width: 50%;
     display: flex;
@@ -70,6 +54,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .welcome-text {
@@ -78,7 +63,7 @@ form {
     color: rgb(145, 61, 103);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
 }
 
 footer {
