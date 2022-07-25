@@ -4,10 +4,11 @@ body {
 }
 main {
     background: blanchedalmond;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
+}
+
+div {
+    opacity: 1;
 }
 
 .grad4 {
@@ -35,23 +36,75 @@ form {
     border-style: none;
 }
 
-#welcome {
-    font-size: 32px;
-    font-weight: bolder;
-    color: rgb(206, 97, 152);
+.center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.welcome {
+    font-size: 32px;
+    font-weight: bolder;
+    color: rgb(206, 97, 152);
 } .welcome-text {
     font-size: 19px;
     font-weight: 300;
     color: rgb(145, 61, 103);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-} .unfold {
-    animation: to-right 5s ease 2s 5 normal forwards;
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    padding: 0.5rem;
+} .pop {
+    margin-left: 30%;
+    visibility: visible;
+    animation: to-left 2s ease-out 20s;
+    animation-fill-mode: both;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.delay1 {
+    animation-delay: 1s;
+}
+.delay2 {
+    animation-delay: 4s;
+}
+.delay3 {
+    animation-delay: 7s;
+}
+.delay4 {
+    animation-delay: 10s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.reveal {
+    animation: reveal-animation 5s ease-out;
+  }
+@keyframes reveal-animation {
+    from {
+        transform: translateY(150px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes to-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes to-right {
@@ -60,6 +113,19 @@ form {
     }
     100% {
         transform: translateX(100%);
+    }
+}
+    
+
+
+@keyframes to-left {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 1;
     }
 }
 

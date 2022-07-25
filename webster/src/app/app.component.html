@@ -7,26 +7,29 @@
     <title>Welcome!</title>
     <base href="/"> <!-- This is the base URL for the application. -->
   </head>
-  <body>
+  <body id="start">
     <header>
       <button class="header-item">Homepage</button>.
       <button class="header-item" (onclick)=" onDevelopment">Development</button>
-      <img src="/webster/src/assets/" alt="">
+      <img src="/webster/src/assets/download.png" alt="Twitter">
+      <img src="/webster/src/assets/instagram-logo-A807AD378B-seeklogo.com.png" alt="Instagram">
+      <img src="/workspaces/spider-web/webster/src/assets/discord-black-logo-733DD6B9B0-seeklogo.com.png"
+          alt="Discord">
     </header>
     <router-outlet></router-outlet>
     <main>
       <img src="/webster/src/assets/notfound.jpg" alt="Not found">
       <img src="/webster/src/assets/laptops.jpg" alt="laplop">
       <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
-      <div class="grad1">
-        <h1 id="welcome"><i>Welcome to Spider Web!</i></h1>
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
         <p class="welcome-text">The place where IT innovators can connect and build powerful
           meaningful applications that can change the world.
         </p>
       </div>
-      <div class="grad2">
-        <h3 class="welcome-text">You are not a worker. . .</h3>
-        <p class="welcome-text">You are:</p>
+      <div class="hidden">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
         <ul>
           <li>an architect</li>
           <li>a desiger</li>
@@ -34,7 +37,7 @@
           <li><b>a sweetheart.</b></li>
         </ul>
       </div>
-      <div class="grad3">
+      <div class="hidden grad3">
         <p class="welcome-text">We strive to create a simple, intuitive, outstanding
           codespace where your team can create and share their work while being nurtured 
           by a community of like-minded people.
@@ -47,7 +50,7 @@
           <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
         </ul>
       </div>
-      <div class="grad4">
+      <div class="hidden grad4">
         <form action="">
           <p>Join your team today and begin making memories~</p>
           <input class="form-item" type="text" name="username" placeholder="Username">
@@ -56,6 +59,214 @@
         </form>
         <p>Difference begins with you.</p>
       </div>
+
+<!--
+      <img src="/webster/src/assets/notfound.jpg" alt="Not found">
+      <img src="/webster/src/assets/laptops.jpg" alt="laplop">
+      <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </div>
+      <div class="reveal grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </div>
+      <div class="reveal grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </div>
+      <img src="/webster/src/assets/notfound.jpg" alt="Not found">
+      <img src="/webster/src/assets/laptops.jpg" alt="laplop">
+      <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </div>
+      <div class="reveal grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </div>
+      <div class="reveal grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </div>
+      <img src="/webster/src/assets/notfound.jpg" alt="Not found">
+      <img src="/webster/src/assets/laptops.jpg" alt="laplop">
+      <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </div>
+      <div class="reveal grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </div>
+      <div class="reveal grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </div>
+      <img src="/webster/src/assets/notfound.jpg" alt="Not found">
+      <img src="/webster/src/assets/laptops.jpg" alt="laplop">
+      <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </div>
+      <div class="reveal grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </div>
+      <div class="reveal grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </div>
+      <img src="/webster/src/assets/notfound.jpg" alt="Not found">
+      <img src="/webster/src/assets/laptops.jpg" alt="laplop">
+      <img src="/webster/src/assets/every-day-is-a-new-start.jpg" alt="notebook">
+      <div>
+        <h1 class="welcome center"><i>Welcome to Spider Web!</i></h1>
+        <p class="welcome-text">The place where IT innovators can connect and build powerful
+          meaningful applications that can change the world.
+        </p>
+      </div>
+      <div class="reveal">
+        <h3 class="center">You are not a worker. . .</h3>
+        <h2 class="center">You are:</h2>
+        <ul>
+          <li>an architect</li>
+          <li>a desiger</li>
+          <li>a game changer</li>
+          <li><b>a sweetheart.</b></li>
+        </ul>
+      </div>
+      <div class="reveal grad3">
+        <p class="welcome-text">We strive to create a simple, intuitive, outstanding
+          codespace where your team can create and share their work while being nurtured 
+          by a community of like-minded people.
+        </p>
+        <h3>We believe in Spider Web because:</h3>
+        <ul>
+          <li>you can <b>customise user-experience</b> on the go as you wish</li>
+          <li>you can <b>develop in a private enviornment</b> of project</li>
+          <li>you can <b>quickly manage and notify</b> members and notificatins</li>
+          <li>you have <b>everything</b> from highlighting code base to bugtracker.</li>
+        </ul>
+      </div>
+      <div class="reveal grad4">
+        <form action="">
+          <p>Join your team today and begin making memories~</p>
+          <input class="form-item" type="text" name="username" placeholder="Username">
+          <input class="form-item" type="password" name="password" placeholder="Password">
+          <button class="form-item" type="submit">Login</button>
+        </form>
+        <p>Difference begins with you.</p>
+      </div>
+-->
     </main>
   </body>
   <footer>

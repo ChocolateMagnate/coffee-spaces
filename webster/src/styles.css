@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 header {
     display: flex;
-    justify-content: right;
-    align-items: right;
+    justify-content: left;
     background-color: lightblue;
     list-style: none;
 }
