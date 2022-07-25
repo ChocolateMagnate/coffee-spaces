@@ -3,20 +3,14 @@ body {
     margin: 0%;
 }
 main {
+    background: blanchedalmond;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
-.grad1 {
-    background: linear-gradient(to bottom, lightblue, lightgreen);
-    width: 100%;
-} .grad2 {
-    background: lightgreen;
-    width: 100%;
-} .grad3 {
-    background: lightgreen;
-} .grad4 {
+.grad4 {
     background-color: blanchedalmond;
     width: 100%;
     justify-content: center;
