@@ -8,21 +8,15 @@ main {
     align-items: center;
 }
 
-#grad1 {
+.grad1 {
     background: linear-gradient(to bottom, lightblue, lightgreen);
     width: 100%;
-}
-
-#grad2 {
+} .grad2 {
     background: lightgreen;
     width: 100%;
-}
-
-#grad3 {
+} .grad3 {
     background: lightgreen;
-}
-
-#grad4 {
+} .grad4 {
     background-color: blanchedalmond;
     width: 100%;
     justify-content: center;
@@ -55,15 +49,24 @@ form {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-.welcome-text {
+} .welcome-text {
     font-size: 19px;
     font-weight: 300;
     color: rgb(145, 61, 103);
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+} .unfold {
+    animation: to-right 5s ease 2s 5 normal forwards;
+}
+
+@keyframes to-right {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 footer {
