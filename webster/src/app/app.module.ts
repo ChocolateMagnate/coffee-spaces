@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DevelopmentComponent } from './development/development.component';
 import { LostComponent } from './lost/lost.component';
+import { CharsComponent } from './chars/chars.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LostComponent } from './lost/lost.component';
     HomeComponent,
     ProfileComponent,
     DevelopmentComponent,
-    LostComponent
+    LostComponent,
+    CharsComponent
   ],
   imports: [
     BrowserModule,

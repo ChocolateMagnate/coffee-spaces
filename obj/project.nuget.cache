@@ -1,8 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "yx6L2NULmwlkoFdbWiPzYmUey6Gb+CPRS2rH/fr01B7B97Jnfo2wGOhHpdyv9IfMoBxKpCLImiFQRm19OEm8UQ==",
+  "dgSpecHash": "Je3io50rVYTcb6a1kiRTfqdQniAl2XqL3c4qHJfzAf93X1wXlnuTlDNmKNfW+h07LIcLkkMWyMIUt0nJAwxHGg==",
   "success": true,
   "projectFilePath": "/workspaces/spider-web/spider-web.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/var/nuget/microsoft.aspnetcore.cors/2.2.0/microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.configuration.abstractions/2.2.0/microsoft.extensions.configuration.abstractions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.dependencyinjection.abstractions/2.2.0/microsoft.extensions.dependencyinjection.abstractions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.fileproviders.abstractions/2.2.0/microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.logging.abstractions/2.2.0/microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.options/2.2.0/microsoft.extensions.options.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.extensions.primitives/2.2.0/microsoft.extensions.primitives.2.2.0.nupkg.sha512",
+    "/var/nuget/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/var/nuget/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
+    "/var/nuget/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "/var/nuget/system.memory/4.5.1/system.memory.4.5.1.nupkg.sha512",
+    "/var/nuget/system.runtime.compilerservices.unsafe/4.5.1/system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "/var/nuget/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

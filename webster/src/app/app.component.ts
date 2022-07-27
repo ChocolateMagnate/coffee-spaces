@@ -12,7 +12,6 @@ interface Response {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'webster';
   constructor(private http: HttpClient, private router: Router, /*private authService: AuthService*/) {
     window.addEventListener('scroll', this.reveal);
     console.log("App component loaded");
@@ -20,7 +19,7 @@ export class AppComponent {
 
   onLogin() {
     this.http.get<Response>("http://localhost:7093/fetch").subscribe(
-      response => {console.log(response);}, error => {console.log(error);}
+      response => {console.log(response)}, error => {console.log(error)}
     );
   }
 
