@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
+interface Response {
+  letters: string[];
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,9 +13,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'webster';
-  constructor(private router: Router, /*private authService: AuthService*/) {
+  constructor(private http: HttpClient, private router: Router, /*private authService: AuthService*/) {
     window.addEventListener('scroll', this.reveal);
     console.log("App component loaded");
+  }
+
+  onLogin() {
+    this.http.get<Response>("http://localhost:7093/fetch").subscribe(
+      response => {console.log(response);}, error => {console.log(error);}
+    );
   }
 
   reveal() {
