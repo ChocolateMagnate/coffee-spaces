@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +11,9 @@ export class CharsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get("http://localhost:5226/fetch").subscribe(
+    let headers = new HttpHeaders();
+    headers.append('Access-Control-Allow-Origin', '*');
+    this.http.get("http://localhost:5226/fetch", {headers}).subscribe(
       response => {console.log(response)}, error => {console.log(error)});
   }
 }

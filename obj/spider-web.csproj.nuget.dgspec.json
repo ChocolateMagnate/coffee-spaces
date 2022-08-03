@@ -41,6 +41,10 @@
             "Microsoft.AspNetCore.Cors": {
               "target": "Package",
               "version": "[2.2.0, )"
+            },
+            "entityframework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
             }
           },
           "imports": [

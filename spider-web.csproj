@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="entityframework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
   </ItemGroup>
 
