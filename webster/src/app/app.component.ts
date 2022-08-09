@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,43 +11,40 @@ interface Response {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private http: HttpClient, private router: Router, /*private authService: AuthService*/) {
-    window.addEventListener('scroll', this.reveal);
+export class AppComponent implements OnInit {
+  constructor(private http: HttpClient, private router: Router /*, private authService: AuthService*/) {
     console.log("App component loaded");
   }
+  ngOnInit() {
+    if (window.location.href === "http://localhost:4200/") {
+      this.router.navigate(["/welcome"]);
+  }
+}
 
   onLogin() {
     this.http.get<Response>("http://localhost:7093/fetch").subscribe(
-      response => {console.log(response)}, error => {console.log(error)}
-    );
+      response => {console.log(response)}, error => {console.log(error)});
   }
 
-  reveal() {
-    //Resolve this method.
-    console.log("Scrolling");
-    let reveals = document.getElementsByClassName("hidden");
-    console.log(reveals);
-    let windowHeight = window.innerHeight; //Get the window height.
-    let elementVisible = 150; //The element is visible if it is 150px from the top of the screen.
-    for (let step = 0; step < reveals.length; step++) {
-      let topItem = reveals[step].getBoundingClientRect().top; //Get the top coordinate of the element.
-      console.log("Window height: " + windowHeight);
-      console.log("Top item: " + topItem);
-      console.log("Element visible: " + elementVisible);
-      if (topItem < windowHeight + elementVisible) {
-        reveals[step].classList.remove("hidden");
-        reveals[step].classList.add("reveal");
-      }
-      if (topItem < windowHeight - elementVisible - 1000) {
-        reveals[step].classList.remove("hidden");
-        reveals[step].classList.add('reveal');
-        console.log(reveals[step] + " activated");
-      }
-    }
-  }
 
   onDevelopment() {
     this.router.navigate(['/development']);
   }
+
+  onHome() {
+    this.router.navigate(['/home']);
+  }
+
+  onSubmitBug() {
+    this.router.navigate(['/submit-bug']);
+  }
+
+  onCode() {
+    window.location.href = "http://localhost:4200/code";
+  }
+
+  onProfile() {
+    this.router.navigate(['/profile']);
+  }
 }
+

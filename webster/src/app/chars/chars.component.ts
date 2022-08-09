@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+//This component remains as a simple way to verify if the connection to the server is etablished.
 @Component({
   selector: 'app-chars',
   templateUrl: './chars.component.html',
