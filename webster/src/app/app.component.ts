@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
     console.log("App component loaded");
   }
   ngOnInit() {
-    if (window.location.href === "http://localhost:4200/") {
+    if (window.location.href === "http://localhost:4200") {
       this.router.navigate(["/welcome"]);
   }
 }

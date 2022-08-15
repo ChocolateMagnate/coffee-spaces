@@ -17,3 +17,9 @@ header {
 .header-item:hover {
     background-color: lightgreen;
 }
+
+footer {
+    background-color: black;
+    padding: 0.5rem 1rem;
+    color: blanchedalmond;
+}

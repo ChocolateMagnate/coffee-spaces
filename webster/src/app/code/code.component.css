@@ -1,0 +1,29 @@
+.route {
+    display: flexbox;
+    flex-direction: row;
+}
+
+.sidebar {
+    display: flex;
+    order: 0;
+    flex-direction: column;
+}
+
+#sidebar-item {
+    background-color: white;
+    border-color: aquamarine;
+    border-style: solid;
+    width: 170px;
+    margin: 2px;
+}
+
+#sidebar-item:hover {
+    background-color: aquamarine;
+    border-color: aquamarine;
+}
+
+.repository {
+    display: flex;
+    order: 1;
+    flex-direction: column;
+}

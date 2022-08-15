@@ -8,8 +8,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SubmitBugComponent } from './submit-bug/submit-bug.component';
 import { DevelopmentComponent } from './development/development.component';
 
-
-
 const routes: Routes = [
       {path: 'home', component: HomeComponent},
       {path: 'code', component: CodeComponent},
