@@ -14,4 +14,9 @@ export class CodeComponent implements OnInit {
     console.log(items);
   }
 
+  check(item: HTMLElement) {
+    console.log(item);
+    item.classList.toggle("checked");
+  }
+
 }

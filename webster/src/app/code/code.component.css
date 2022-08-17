@@ -5,6 +5,7 @@
 
 .sidebar {
     display: flex;
+    flex-wrap: wrap;
     order: 0;
     flex-direction: column;
 }
@@ -17,6 +18,11 @@
     margin: 2px;
 }
 
+#sidebar-item input[type="radio"] {
+    display: none;
+}
+
+
 #sidebar-item:hover {
     background-color: aquamarine;
     border-color: aquamarine;
@@ -26,4 +32,9 @@
     display: flex;
     order: 1;
     flex-direction: column;
+    visibility: hidden;
+}
+
+.repository:checked {
+    visibility: visible;
 }

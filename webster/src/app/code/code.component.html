@@ -1,10 +1,11 @@
 <div class="route">
     <div class="sidebar">
-        <label id="sidebar-item"><input type="checkbox" name="bar">Repositories</label>
-        <label id="sidebar-item"><input type="checkbox" name="bar">Issues</label>
-        <label id="sidebar-item"><input type="checkbox" name="bar">Discussions</label>
+        <label id="sidebar-item"><input type="radio" name="bar">Repositories</label>
+        <label id="sidebar-item"><input type="radio" name="bar">Issues</label>
+        <label id="sidebar-item"><input type="radio" name="bar">Discussions</label>
     </div>
     <div>
-        <div class="repository" ngFor="let item of dataset">{{dataset[i]}}</div>
+        <div class="repository" *ngFor="let item of dataset;"
+                        (click)="check(item)">{{item}}</div>
     </div>
 </div>
