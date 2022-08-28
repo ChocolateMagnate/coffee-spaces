@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .route {
     display: flexbox;
     flex-direction: row;
@@ -10,17 +14,13 @@
     flex-direction: column;
 }
 
-#sidebar-item {
-    background-color: white;
-    border-color: aquamarine;
+.sidebar-item {
     border-style: solid;
     width: 170px;
     margin: 2px;
 }
 
-#sidebar-item input[type="radio"] {
-    display: none;
-}
+
 
 
 #sidebar-item:hover {
