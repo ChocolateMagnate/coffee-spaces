@@ -50,7 +50,7 @@
 @code {
     public Index(){
         var rnd = new Random();
-        this.selection = rnd.Next(0, 9);
+        this.selection = rnd.Next(0, 9); //The random set of placeholders
         this.placeholders = new Dictionary<string, List<string>> {
             {"name", new List<string> {"Anabella Baunti", "John Wick", "Jane Boe", "Anna Bell", 
                 "Rick Morty", "Jack Smith", "Bill Whanderson", "Stephanie Sweet", "Casper Spooky", "Sabina Panchenko"}},
@@ -58,11 +58,11 @@
                 "jacksmith", "billwhanderson", "stephaniesweet", "casperspooky", "sabinapanchenko"}},
             {"email", new List<string> {"@anabella.baunti", "@john.wick", "@jane.boe", "@anna.bell", 
                 "@rick.morty", "@jack.smith", "@bill.whanderson", "@stephanie.sweet", "@casper.spooky", "@sabina.panchenko"}},
-            {"password", new List<string> {"123456", "123456", "123456", "123456", "123456", "123456", 
-                "123456", "123456", "123456", "123456"}},
+            {"password", new List<string> {"730275", "185205", "937105", "105205", "105835", "028401", 
+                "123456", "0185205", "038502", "074936"}},
         };
-        this.selectedPlaceholders = new List<string>() {
-            placeholders["name"]    [selection],
+        this.selectedPlaceholders = new List<string>() { //The selected placeholders 
+            placeholders["name"]    [selection],         //to reference in the UI
             placeholders["username"][selection],
             placeholders["email"]   [selection],
             placeholders["password"][selection],
@@ -81,11 +81,13 @@
             Permissions = permissions;
         }
     }
+    /*These are the positions to iterate thorough. This could have been hardcoded in the UI,
+    but the solution to separate it in C# scales more and is overall more beautiful.*/
     public static List<Rank> ranks = new List<Rank> {
         //The supreme almighty position
         new Rank("Team Lead", "Can create and manage projects and teams",
             new List<string> {"create project", "flag the development stages", "integrate with other services",
-            "seal repositories", "delete projects", "change roles", "add and remove members", "arrange meetings"}),
+                "seal repositories", "delete projects", "change roles", "add and remove members", "arrange meetings"}),
         //Senior developers are given power to advise and mentor less experienced colleagues.
         new Rank("Senior Developer", "Sophisticated programmers who can override less experienced peers",
             new List<string> {"flag the development stages", "change roles", "add and remove members",
