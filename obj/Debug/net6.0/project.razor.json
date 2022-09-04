@@ -8,35 +8,35 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -643794539,
+        "HashCode": 257422231,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.App",
+        "Name": "coffee_spaces.Pages.FetchData",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.App"
+          "Common.TypeName": "coffee_spaces.Pages.FetchData"
         }
       },
       {
-        "HashCode": 37788319,
+        "HashCode": 2032159834,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.App",
+        "Name": "coffee_spaces.Pages.FetchData",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "coffee_spaces.App"
+            "TagName": "coffee_spaces.Pages.FetchData"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.App",
+          "Common.TypeName": "coffee_spaces.Pages.FetchData",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -74,39 +74,6 @@
         }
       },
       {
-        "HashCode": 257422231,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Pages.FetchData",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Pages.FetchData"
-        }
-      },
-      {
-        "HashCode": 2032159834,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Pages.FetchData",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "coffee_spaces.Pages.FetchData"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Pages.FetchData",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 2025146298,
         "Kind": "Components.Component",
         "Name": "coffee_spaces.Pages.Index",
@@ -140,88 +107,35 @@
         }
       },
       {
-        "HashCode": -1797916028,
+        "HashCode": -643794539,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Shared.SurveyPrompt",
+        "Name": "coffee_spaces.App",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Shared.SurveyPrompt"
+          "Common.TypeName": "coffee_spaces.App"
         }
       },
       {
-        "HashCode": -123262371,
+        "HashCode": 37788319,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Shared.SurveyPrompt",
+        "Name": "coffee_spaces.App",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "coffee_spaces.Shared.SurveyPrompt"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Title",
-            "TypeName": "System.String",
-            "Metadata": {
-              "Common.PropertyName": "Title"
-            }
+            "TagName": "coffee_spaces.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Shared.SurveyPrompt",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 853566943,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Shared.NavMenu",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Shared.NavMenu"
-        }
-      },
-      {
-        "HashCode": -895324414,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Shared.NavMenu",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "coffee_spaces.Shared.NavMenu"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Shared.NavMenu",
+          "Common.TypeName": "coffee_spaces.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -314,6 +228,92 @@
           "Runtime.Name": "Components.None",
           "Common.TypeName": "coffee_spaces.Shared.MainLayout.Body",
           "Components.IsSpecialKind": "Components.ChildContent",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 853566943,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Shared.NavMenu",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Shared.NavMenu"
+        }
+      },
+      {
+        "HashCode": -895324414,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Shared.NavMenu",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "coffee_spaces.Shared.NavMenu"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Shared.NavMenu",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1797916028,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Shared.SurveyPrompt",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Shared.SurveyPrompt"
+        }
+      },
+      {
+        "HashCode": -123262371,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Shared.SurveyPrompt",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "coffee_spaces.Shared.SurveyPrompt"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Title",
+            "TypeName": "System.String",
+            "Metadata": {
+              "Common.PropertyName": "Title"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Shared.SurveyPrompt",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },

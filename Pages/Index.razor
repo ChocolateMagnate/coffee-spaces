@@ -1,9 +1,59 @@
 ﻿@page "/"
+@page "/home"
+<div>
+    <h1>Welcome to the Coffee Spaces!</h1>
+    <p>Our mission is to deliver productive and enjoyable environment for developers 
+        to make the software that powers the world with a cup of coffee in their hands.
+    </p>
+    <h2>How do we work?</h2>
+    <p>We thrive to deliver the one space to create, store, manage your codebase, while 
+        providing the line of communication with your team and the tools to nurture developers.
+    </p>
+    <p>On our platform, you can create <b>teams</b> and assign different <b>projects</b> to them.
+        In every team there's a <i>team lead</i> that has the administrative rights as well as 
+        different ranks that have the tools to do their job:
+    </p>
+    <ul>
 
-<PageTitle>Index</PageTitle>
+    </ul>
+</div>
 
-<h1>Hello, world!</h1>
+@code {
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    public class Rank {
+        public string? Title { get; set; }
+        public string? Description { get; set; }
+        public List<string>? Permissions { get; set; }
+        public Rank(string title, string description, List<string> permissions) {
+            Title = title;
+            Description = description;
+            Permissions = permissions;
+        }
+    }
+        public List<Rank> ranks = new List<Rank> {
+        //The supreme almighty position
+        new Rank("Team Lead", "Can create and manage projects and teams",
+            new List<string> {"create project", "flag the development stages", "integrate",
+            "seal repositories", "delete projects", "change roles", "add and remove members"}),
+        //Senior developers are given power to advise and mentor less experienced colleagues.
+        new Rank("Senior Developer", "Sophisticated programmers who can override less experienced peers",
+            new List<string> {"flag the development stages", "change roles", "add and remove members",
+                "restrict permissions", "protect branches"}),
+        //Maintainers' make the codebase more stable and secure.
+        new Rank("Maintainer", "Developers entrusted to watch, update and troubleshoot the project",
+            new List<string> {"protect branches", "restrict permissions"}),
+        //Regular developers are the backbone of the team.
+        new Rank("Common Developer", "Regular developers who can create and manage branches",
+            new List<string> {"create branches", "use git", "contribute code"}),
+        //Interns are the newbies who are learning the ropes.
+        new Rank("Intern", "Aspirational apprentices",
+            new List<string> {"read code", "submit code"}),
+        //Testers guarantee the app is working as intended.
+        new Rank("Tester", "Quality assurance specialists",
+            new List<string> {"submit bug reports", "contribute code", "use git"}),
+        //Designers are responsible for the assets.
+        new Rank("Designer", "Visual artists that draw the UI",
+            new List<string> {"upload, manage and comment assets"})
+    };
+}
