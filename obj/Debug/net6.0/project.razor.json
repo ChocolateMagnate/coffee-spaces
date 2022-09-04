@@ -199,6 +199,72 @@
         }
       },
       {
+        "HashCode": 765189321,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Pages.Login",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Pages.Login"
+        }
+      },
+      {
+        "HashCode": -1954090808,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Pages.Login",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "coffee_spaces.Pages.Login"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Pages.Login",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -839329958,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Pages.Register",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Register"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Pages.Register"
+        }
+      },
+      {
+        "HashCode": 407436670,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Pages.Register",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "coffee_spaces.Pages.Register"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Pages.Register",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
         "HashCode": -1596203606,
         "Kind": "Components.Component",
         "Name": "Microsoft.AspNetCore.Components.CascadingValue<TValue>",
@@ -13270,8 +13336,18 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "/workspaces/coffee-spaces/Pages/Login.razor",
+      "TargetPath": "Pages\\Login.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "/workspaces/coffee-spaces/App.razor",
       "TargetPath": "App.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "/workspaces/coffee-spaces/Pages/Register.razor",
+      "TargetPath": "Pages\\Register.razor",
       "FileKind": "component"
     }
   ],

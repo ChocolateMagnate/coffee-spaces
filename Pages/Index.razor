@@ -1,5 +1,6 @@
 ﻿@page "/"
 @page "/home"
+@using Records
 <div>
     <h1>Welcome to the Coffee Spaces!</h1>
     <p>Our mission is to deliver productive and enjoyable environment for developers 
@@ -35,52 +36,8 @@
     <li>Embedded video meeting stream</li>
     <li>And more...</li>
 </ul>
-<form action="">
-    <p>We will be glad to see you in our bar!</p>
-    <p>Your name: </p>
-    <input type="text" name="name" placeholder="@selectedPlaceholders[0]">
-    <p>Your username:</p>
-    <input type="text" name="username" placeholder="@selectedPlaceholders[1]">
-    <p>Your email: </p>
-    <input type="email" name="email" placeholder="@selectedPlaceholders[2]">
-    <p>Your password: </p>
-    <input type="password" name="password" placeholder="@selectedPlaceholders[3]">
-    <button type="submit">Join us</button>
-</form>
+<Register></Register>
 @code {
-    public Index(){
-        var rnd = new Random();
-        this.selection = rnd.Next(0, 9); //The random set of placeholders
-        this.placeholders = new Dictionary<string, List<string>> {
-            {"name", new List<string> {"Anabella Baunti", "John Wick", "Jane Boe", "Anna Bell", 
-                "Rick Morty", "Jack Smith", "Bill Whanderson", "Stephanie Sweet", "Casper Spooky", "Sabina Panchenko"}},
-            {"username", new List<string> {"anabella", "johnwick", "janeboe", "annabell", "rickmorty", 
-                "jacksmith", "billwhanderson", "stephaniesweet", "casperspooky", "sabinapanchenko"}},
-            {"email", new List<string> {"@anabella.baunti", "@john.wick", "@jane.boe", "@anna.bell", 
-                "@rick.morty", "@jack.smith", "@bill.whanderson", "@stephanie.sweet", "@casper.spooky", "@sabina.panchenko"}},
-            {"password", new List<string> {"730275", "185205", "937105", "105205", "105835", "028401", 
-                "123456", "0185205", "038502", "074936"}},
-        };
-        this.selectedPlaceholders = new List<string>() { //The selected placeholders 
-            placeholders["name"]    [selection],         //to reference in the UI
-            placeholders["username"][selection],
-            placeholders["email"]   [selection],
-            placeholders["password"][selection],
-        };
-    }
-    public int selection { get; set; }
-    public List<string> selectedPlaceholders;
-    private Dictionary<string, List<string>> placeholders;
-    public class Rank {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public List<string> Permissions { get; set; }
-        public Rank(string title, string description, List<string> permissions) {
-            Title = title;
-            Description = description;
-            Permissions = permissions;
-        }
-    }
     /*These are the positions to iterate thorough. This could have been hardcoded in the UI,
     but the solution to separate it in C# scales more and is overall more beautiful.*/
     public static List<Rank> ranks = new List<Rank> {

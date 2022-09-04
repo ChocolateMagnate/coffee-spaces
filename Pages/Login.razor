@@ -1,0 +1,17 @@
+@page "/login"
+<form action="">
+    <p>Your team awaits you!</p>
+    <input type="text" name="username" @bind="this.username" placeholder="Your username">
+    <input type="password" name="password" @bind="this.password" placeholder="Your password">
+    <input type="text" name="project" @bind="this.project" placeholder="(Optional) The project to enter">
+    <input type="submit" value="Login" @onclick="LoginSystem">
+</form>
+
+@code {
+    private string username, password, project;
+    private void LoginSystem() {
+        /*TO-DO:
+         * implement registration and authorisation,
+         * connect and organise an SQL database.*/
+    }
+}

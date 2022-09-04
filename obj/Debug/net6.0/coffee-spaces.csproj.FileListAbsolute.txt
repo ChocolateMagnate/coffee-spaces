@@ -813,3 +813,5 @@
 /workspaces/coffee-spaces/obj/Debug/net6.0/refint/coffee-spaces.dll
 /workspaces/coffee-spaces/obj/Debug/net6.0/coffee-spaces.pdb
 /workspaces/coffee-spaces/obj/Debug/net6.0/ref/coffee-spaces.dll
+/workspaces/coffee-spaces/bin/Debug/net6.0/package-lock.json
+/workspaces/coffee-spaces/bin/Debug/net6.0/package.json
