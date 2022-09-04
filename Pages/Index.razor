@@ -14,28 +14,78 @@
         different ranks that have the tools to do their job:
     </p>
     <ul>
-
+        @foreach (var rank in ranks)
+        {
+            <h3>@rank.Title</h3>
+            <p>@rank.Description</p>
+            @foreach (var permission in @rank.Permissions)
+            {
+                <li>@permission</li>
+            }
+        }
     </ul>
 </div>
-
+<p>Fore each of these roles, we facilitate a verity of helpful features, including:</p>
+<ul>
+    <li>Codebase management</li>
+    <li>Issue tracking</li>
+    <li>Code reviews</li>
+    <li>Continuous integration</li>
+    <li>Private and public chats</li>
+    <li>Embedded video meeting stream</li>
+    <li>And more...</li>
+</ul>
+<form action="">
+    <p>We will be glad to see you in our bar!</p>
+    <p>Your name: </p>
+    <input type="text" name="name" placeholder="@selectedPlaceholders[0]">
+    <p>Your username:</p>
+    <input type="text" name="username" placeholder="@selectedPlaceholders[1]">
+    <p>Your email: </p>
+    <input type="email" name="email" placeholder="@selectedPlaceholders[2]">
+    <p>Your password: </p>
+    <input type="password" name="password" placeholder="@selectedPlaceholders[3]">
+    <button type="submit">Join us</button>
+</form>
 @code {
-
-
+    public Index(){
+        var rnd = new Random();
+        this.selection = rnd.Next(0, 9);
+        this.placeholders = new Dictionary<string, List<string>> {
+            {"name", new List<string> {"Anabella Baunti", "John Wick", "Jane Boe", "Anna Bell", 
+                "Rick Morty", "Jack Smith", "Bill Whanderson", "Stephanie Sweet", "Casper Spooky", "Sabina Panchenko"}},
+            {"username", new List<string> {"anabella", "johnwick", "janeboe", "annabell", "rickmorty", 
+                "jacksmith", "billwhanderson", "stephaniesweet", "casperspooky", "sabinapanchenko"}},
+            {"email", new List<string> {"@anabella.baunti", "@john.wick", "@jane.boe", "@anna.bell", 
+                "@rick.morty", "@jack.smith", "@bill.whanderson", "@stephanie.sweet", "@casper.spooky", "@sabina.panchenko"}},
+            {"password", new List<string> {"123456", "123456", "123456", "123456", "123456", "123456", 
+                "123456", "123456", "123456", "123456"}},
+        };
+        this.selectedPlaceholders = new List<string>() {
+            placeholders["name"]    [selection],
+            placeholders["username"][selection],
+            placeholders["email"]   [selection],
+            placeholders["password"][selection],
+        };
+    }
+    public int selection { get; set; }
+    public List<string> selectedPlaceholders;
+    private Dictionary<string, List<string>> placeholders;
     public class Rank {
-        public string? Title { get; set; }
-        public string? Description { get; set; }
-        public List<string>? Permissions { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public List<string> Permissions { get; set; }
         public Rank(string title, string description, List<string> permissions) {
             Title = title;
             Description = description;
             Permissions = permissions;
         }
     }
-        public List<Rank> ranks = new List<Rank> {
+    public static List<Rank> ranks = new List<Rank> {
         //The supreme almighty position
         new Rank("Team Lead", "Can create and manage projects and teams",
-            new List<string> {"create project", "flag the development stages", "integrate",
-            "seal repositories", "delete projects", "change roles", "add and remove members"}),
+            new List<string> {"create project", "flag the development stages", "integrate with other services",
+            "seal repositories", "delete projects", "change roles", "add and remove members", "arrange meetings"}),
         //Senior developers are given power to advise and mentor less experienced colleagues.
         new Rank("Senior Developer", "Sophisticated programmers who can override less experienced peers",
             new List<string> {"flag the development stages", "change roles", "add and remove members",
