@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LMPG1AwLwtGhS1/a0fifcKGvRERkSYM/qOUHAiPSJ4c=",
+  "Hash": "PTOL5ud53HVbIXg7nzmwn/MajuANt2vKKxWi1AIg4fE=",
   "Source": "coffee-spaces",
   "BasePath": "/",
   "Mode": "Root",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/var/nuget/microsoft.netcore.app.runtime.mono.browser-wasm/6.0.6/runtimes/browser-wasm/native/icudt.dat"
+    },
+    {
+      "Identity": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Json.dll",
+      "SourceId": "coffee-spaces",
+      "SourceType": "Computed",
+      "ContentRoot": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Json.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/var/nuget/json/1.0.1/lib/net40/Json.dll"
     },
     {
       "Identity": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Microsoft.AspNetCore.Authorization.dll",
@@ -6696,6 +6713,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/System.ComponentModel.Annotations.dll"
+    },
+    {
+      "Identity": "/workspaces/coffee-spaces/obj/Debug/net6.0/build-gz/zFZ7+CIg.gz",
+      "SourceId": "coffee-spaces",
+      "SourceType": "Computed",
+      "ContentRoot": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/",
+      "BasePath": "/",
+      "RelativePath": "_framework/Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Json.dll"
     },
     {
       "Identity": "/workspaces/coffee-spaces/obj/Debug/net6.0/build-gz/zJbHLgvQ.gz",

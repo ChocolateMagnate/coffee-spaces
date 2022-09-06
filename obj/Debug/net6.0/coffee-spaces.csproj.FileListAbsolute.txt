@@ -815,3 +815,7 @@
 /workspaces/coffee-spaces/obj/Debug/net6.0/ref/coffee-spaces.dll
 /workspaces/coffee-spaces/bin/Debug/net6.0/package-lock.json
 /workspaces/coffee-spaces/bin/Debug/net6.0/package.json
+/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Json.dll
+/workspaces/coffee-spaces/bin/Debug/net6.0/wwwroot/_framework/Json.dll.gz
+/workspaces/coffee-spaces/bin/Debug/net6.0/Json.dll
+/workspaces/coffee-spaces/obj/Debug/net6.0/build-gz/zFZ7+CIg.gz

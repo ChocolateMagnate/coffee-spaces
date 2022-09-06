@@ -1,10 +1,21 @@
-//This file is responsible for parsing the C# source code and providing the syntax highlighting.
+//This file is responsible for parsing the source code and providing the syntax highlighting.
 namespace Compiler;
+using System.Drawing;
+using Json;
+public struct Colours {
+    Color Keyword = Color.IndianRed;
+    Color Operator = Color.White;
+    Color String = Color.Beige;
+    Color Comment = Color.Gray;
+    Color Number = Color.Orange;
+    Color Constant = Color.Blue;
+    public Colours(){}
+}
 /// <summary>
 /// Encapsulates language-specific information in a separate object. Contains
 /// the definitions of the keywords, operators, separators and verity of tokens.
 /// </summary>
-public class Language{
+public struct Language{
     public token[] Tokens;
     public string[] Keywords;
     public string[] Operators;
@@ -17,22 +28,27 @@ public class Language{
     }
 }
 
-public class SourceParser{
+public class SourceParser {
     private int count;
+    public bool Successful;
     private Lexeme[] tree;
     private Language language;
     private string[] lines, lexemes;
     private Dictionary<token, string> identifiers;
-    public SourceParser(string source, Language lang) {   //Saves the code in an array of lines.
-        lines = File.ReadAllText(source).Split(Environment.NewLine).ToArray<string>();
-        tree = new Lexeme[lines.Length];  
-        language = lang;
+    public SourceParser(string source, Language language) {   //Saves the code in an array of lines.
+        this.lines = File.ReadAllText(source).Split(Environment.NewLine);
+        this.identifiers = new Dictionary<token, string>();
+        this.lexemes = new string[lines.Length];
+        this.tree = new Lexeme[lines.Length];  
+        this.language = language;
+
     }
     /// <summary>
-    /// The main method of the class. It executes the parsing process for every
-    /// line until it exhausts the source array. Returns true if succeeded.
+    /// The main method of the class. It executes the parsing process for every 
+    /// line until it exhausts the source array. Assigns true to the property 
+    /// Successful if succeeded to verify type safety.
     /// </summary>
-    public bool Parse() {
+    public void Parse() {
         try {
             for (count = 0; count < lines.Length; count++) {
                 lines[count] = this.clearComments();
@@ -43,9 +59,15 @@ public class SourceParser{
         }
         catch (Exception e) {
             Console.WriteLine(e.Message);
-            return false;
+            this.Successful = false;
         }
-        return true;
+        this.Successful = true;
+    }
+    /// <summary>
+    /// Provides the array of the lexemes from the source code and their token types.
+    /// </summary>
+    public Lexeme[] GetLexemes() {
+        return tree;
     }
     /// <summary>
     /// This method removes the comments from the line. It handles all 
@@ -85,7 +107,9 @@ public class SourceParser{
     /// parentheses and identifiers. It returns the array of the lexemes.
     /// </summary>
     protected void divideIntoLexemes() {
-        lexemes = lines[count].Split(language.Separators, StringSplitOptions.RemoveEmptyEntries);
+        lexemes = lines[count].Split(language.Separators.Concat(language.Operators)
+            .ToArray<string>(), StringSplitOptions.RemoveEmptyEntries);
+
     }
     /// <summary>
     /// This method matches the lexemes' type and produces the new syntax tree
@@ -192,3 +216,33 @@ public class SourceParser{
     "--", "+=", "-=", "*=", "/=", "%=", "==", "===", "!=", "!==", "<=", ">=", "&&",
     "||", "&=", "|=", "^=", "<<", ">>", "<<=", ">>=", "??", "=>", "::", "/*", "//"};
 */
+internal class Program {
+    private static Language CSharp = new Language( //Keywords
+        new string[] {"abstract", "as", "base", "bool", "break", "byte", "case", "catch",
+            "char", "class", "const", "continue", "default", "delegate", "do","", "double",
+            "else", "enum", "explicit", "implicit", "false", "float", "for", "foreach",
+            "while", "if", "in", "int", "interface", "internal",  "long","namespace",
+            "new", "out", "override", "params", "private","public", "protected", "readonly",
+            "ref", "return", "sbyte", "sealed", "short", "static","void", "virtual"},
+        //Operators and separators
+        new string[] {"+", "-", "*", "/", "%", "=", "!", "<", ">", "&", "|",  "^", "~", "?",
+            "++", "--", "+=", "-=", "*=", "/=", "%=", "==", "!=", "<=", ">=",""},
+        new string[] {"(", ")", "{", "}", "[", "]", ";", ",", ".", ":"}, //Tokens
+        new token[] {token.Keyword, token.Operator, token.Separator, token.String, token.Number,
+            token.Boolean, token.Null, token.Unknown, token.Variable, token.Constant, token.Function,
+            token.Class, token.Namespace, token.Enum, token.Interface, token.Struct, token.Property,
+            token.AccessModifier, token.Field, token.Method, token.Parameter,token.LeftParenthesis,
+            token.RightParenthesis, token.LeftBrace, token.RightBrace, token.LeftBracket,
+            token.RightBracket, token.LeftAngleBracket, token.RightAngleBracket,
+        });
+    static void Main() {
+        Lexeme[] items = new Lexeme[100];
+        string path = "/workspaces/coffee-spaces/Libraries/Compiler/Code snippets/CSharpSample.cs";
+        var code = new SourceParser(path, CSharp);
+        code.Parse();
+        if (code.Successful) items = code.GetLexemes();
+        Console.WriteLine("Operation successful.");
+        foreach (var item in items) Console.WriteLine(JsonParser.Serialize(item));
+        Console.ReadKey();
+    }
+}

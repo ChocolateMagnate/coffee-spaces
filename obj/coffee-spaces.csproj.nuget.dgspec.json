@@ -46,6 +46,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "json": {
+              "target": "Package",
+              "version": "[1.0.1, )"
             }
           },
           "imports": [
