@@ -7,10 +7,10 @@ namespace Compiler;
 /// that only identifiers may possess, including classes, functions, preprocessors.
 /// </summary>
 public enum token{
-    Keyword, Operator, Separator, String, Number, Boolean, Null, Unknown, Variable,
-    Constant, Function, Class, Namespace, Enum, Interface, Struct, Property, Field,
-    Method, Constructor, Destructor, Parameter, Preprocessor,  LeftAngleBracket,
-    RightAngleBracket, LeftBracket, RightBracket, LeftBrace, RightBrace, LeftParenthesis, RightParenthesis, 
+    Keyword, Operator, Separator, String, Number, Boolean, Null, Unknown, Variable, Constant, 
+    Function, Class, Namespace, Enum, Interface, Struct, Property, Field, Method, AccessModifier,
+    Constructor, Destructor, Parameter, Preprocessor,  LeftAngleBracket, RightAngleBracket, 
+    LeftBracket, RightBracket, LeftBrace, RightBrace, LeftParenthesis, RightParenthesis, 
 }
 /// <summary>
 /// Instances of this class are used to store the information about a lexeme.
@@ -18,7 +18,7 @@ public enum token{
 public class Lexeme{
     public token Type;
     public string Content;
-    public Lexeme(token type, string content){
+    public Lexeme(string content, token type){
         this.Type = type;
         this.Content = content;
     }
@@ -30,36 +30,5 @@ public class SyntaxTree: LinkedList<Lexeme>, IEnumerable<Lexeme>{
     protected LinkedList<Lexeme> Lexemes;
     public SyntaxTree(){
         this.Lexemes = new LinkedList<Lexeme>();
-    }
-}
-/// <summary>
-/// This table will serve to record all identifiers along with 
-/// their types to evaluate their displayable colour in the editor.
-/// </summary>
-public class IdentifierTable{
-    protected string[] Keywords;
-    protected string[] Operators;
-    protected string[] Types;
-    public List<Lexeme> Identifiers;
-    public Dictionary<token, string> Shelves;
-    public IdentifierTable(string[] keywords, string[] operators){
-        this.Keywords = keywords;
-        this.Operators = operators;
-        this.Identifiers = new List<Lexeme>();
-        this.Shelves = new Dictionary<token, string>();
-    }
-    //// <summary>
-    /// Matches the input lexeme with its respective token type.
-    /// </summary>
-    public token Match(string identifier){
-        if (this.Keywords.Contains(identifier)) return token.Keyword;
-        if (this.Operators.Contains(identifier)) return token.Operator;
-        foreach (var shelf in this.Shelves) if (shelf.Value.Contains(identifier)) return shelf.Key;
-        return token.Unknown;
-    }
-    // Resolve the operator overloading.
-    public Lexeme this[string key, string? filter = null]{
-        get {}
-        set {}
     }
 }

@@ -9,7 +9,7 @@ public class Language{
     public string[] Keywords;
     public string[] Operators;
     public string[] Separators;
-    public Language(string[] keywords, string[] operators, string[] separators, token[] tokens){
+    public Language(string[] keywords, string[] operators, string[] separators, token[] tokens) {
         this.Tokens = tokens;
         this.Keywords = keywords;
         this.Operators = operators;
@@ -22,8 +22,8 @@ public class SourceParser{
     private Lexeme[] tree;
     private Language language;
     private string[] lines, lexemes;
-    private IdentifierTable identifiers;
-    public SourceParser(string source, Language lang){   //Saves the code in an array of lines.
+    private Dictionary<token, string> identifiers;
+    public SourceParser(string source, Language lang) {   //Saves the code in an array of lines.
         lines = File.ReadAllText(source).Split(Environment.NewLine).ToArray<string>();
         tree = new Lexeme[lines.Length];  
         language = lang;
@@ -32,7 +32,7 @@ public class SourceParser{
     /// The main method of the class. It executes the parsing process for every
     /// line until it exhausts the source array. Returns true if succeeded.
     /// </summary>
-    public bool Parse(){
+    public bool Parse() {
         try {
             for (count = 0; count < lines.Length; count++) {
                 lines[count] = this.clearComments();
@@ -41,7 +41,7 @@ public class SourceParser{
                 //tree = this.parseLexemes();
             }
         }
-        catch (Exception e){
+        catch (Exception e) {
             Console.WriteLine(e.Message);
             return false;
         }
@@ -54,12 +54,12 @@ public class SourceParser{
     /// makes sure the string will be cleared if multiline comment was not closed
     /// until it finds the closing tag thanks for the recursive call.
     /// </summary>
-    protected string clearComments(bool closedComment = true){
+    protected string clearComments(bool closedComment = true) {
         //To add non-C like comments, such as Pythonic.
         //Step 1. Remove the rest of the lines if multiline comment was not closed.
-        if (!closedComment){
+        if (!closedComment) {
             int end = lines[count].IndexOf("*/");
-            if (end != -1){
+            if (end != -1) {
                 lines[count] = lines[count].Substring(end + 2);
                 closedComment = true;
             }
@@ -68,9 +68,9 @@ public class SourceParser{
         lines[count] = lines[count].Split("//")[0];
         //Step 3. Remove the multiline comments.
         int start = lines[count].IndexOf("/*");
-        if (start != -1 && start != 0){
+        if (start != -1 && start != 0) {
             int end = lines[count].IndexOf("*/");
-            if (end != -1 && end != 0){
+            if (end != -1 && end != 0) {
                 lines[count] = lines[count].Substring(0, start) + lines[count].Substring(end + 2);
             }else{
                 lines[count] = lines[count].Substring(0, start);
@@ -84,93 +84,106 @@ public class SourceParser{
     /// to be parsed as individual tokens in this order of priority: strings,
     /// parentheses and identifiers. It returns the array of the lexemes.
     /// </summary>
-    protected void divideIntoLexemes(){
+    protected void divideIntoLexemes() {
         lexemes = lines[count].Split(language.Separators, StringSplitOptions.RemoveEmptyEntries);
     }
     /// <summary>
     /// This method matches the lexemes' type and produces the new syntax tree
     /// that contains its colour to be displayed. It also adds ids to the lookup table.
     /// </summary>
-    protected void parseLexemes(){
-        int step = 0;
-        foreach (var lexeme in lexemes){
-            if (language.Keywords.Contains(lexeme) {
-                tree[step] = new Lexeme(token.Keyword, lexeme);
+    protected void parseLexemes() {
+        int step = 0; token flag = token.Unknown; //The flag is used to determine 
+        foreach (var lexeme in lexemes) { //the type of the id that follows the keyword.
+            if (language.Keywords.Contains(lexeme)) {
+                tree[step] = new Lexeme(lexeme, token.Keyword);
+                switch (lexeme) {
+                    case "class":
+                        flag = token.Class;     break;
+                    case "interface":
+                        flag = token.Interface; break;
+                    case "enum":
+                        flag = token.Enum;      break;
+                    case "struct":
+                        flag = token.Struct;    break;
+                    case "namespace":
+                        flag = token.Namespace; break;
+                    case "public":
+                    case "private":
+                    case "protected":
+                        flag = token.AccessModifier; break;
+                }
                 ++step; continue;
-            } else if (language.Operators.Contains(lexeme)){
-                tree[step] = new Lexeme(token.Operator, lexeme);
+            } else if (language.Operators.Contains(lexeme)) {
+                tree[step] = new Lexeme(lexeme, token.Operator);
+                ++step; continue;
+            } else if (lexeme.StartsWith("\"") && lexeme.EndsWith("\"")) {
+                tree[step] = new Lexeme(lexeme, token.String);
                 ++step; continue;
             } else if (double.TryParse(lexeme, out double number)) {
-                tree[step] = new Lexeme(token.Number, lexeme);
-                ++step; continue;
-            } else if (lexeme.StartsWith("\"") && lexeme.EndsWith("\"")){
-                tree[step] = new Lexeme(token.String, lexeme);
+                tree[step] = new Lexeme(lexeme, token.Number);
                 ++step; continue;
             }
-            //If the lexeme is not a keyword, operator, number or string, it is an identifier.
-            switch (lexeme){
+            //Anticipating special cases.
+            switch (lexeme) {
                 case "true":
-                    tree[step] = new Lexeme(token.Boolean, lexeme);
-                    ++step; break;
                 case "false":
-                    tree[step] = new Lexeme(token.Boolean, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.Boolean);
                     ++step; break;
                 case "null": 
-                    tree[step] = new Lexeme(token.Null, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.Null);
                     ++step; break;
                 case "(":
-                    tree[step] = new Lexeme(token.LeftParenthesis, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.LeftParenthesis);
                     ++step; break;
                 case ")":
-                    tree[step] = new Lexeme(token.RightParenthesis, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.RightParenthesis);
                     ++step; break;
                 case "{":
-                    tree[step] = new Lexeme(token.LeftBrace, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.LeftBrace);
                     ++step; break;
                 case "}":
-                    tree[step] = new Lexeme(token.RightBrace, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.RightBrace);
                     ++step; break;
                 case "[":
-                    tree[step] = new Lexeme(token.LeftBracket, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.LeftBracket);
                     ++step; break;
                 case "]":
-                    tree[step] = new Lexeme(token.RightBracket, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.RightBracket);
                     ++step; break;
                 case "<":
-                    tree[step] = new Lexeme(token.LeftAngleBracket, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.LeftAngleBracket);
                     ++step; break;
                 case ">":
-                    tree[step] = new Lexeme(token.RightAngleBracket, lexeme);
+                    tree[step] = new Lexeme(lexeme, token.RightAngleBracket);
                     ++step; break;
                 case ":":
-                    tree[step] = new Lexeme(token.Separator, "Colon");
+                    tree[step] = new Lexeme("Colon", token.Separator);
                     ++step; break;
                 case ";":
-                    tree[step] = new Lexeme(token.Separator, "Semicolon");
+                    tree[step] = new Lexeme("Semicolon", token.Separator);
                     ++step; break;
                 case ",":
-                    tree[step] = new Lexeme(token.Separator, "Comma");
+                    tree[step] = new Lexeme("Comma", token.Separator);
                     ++step; break;
                 case ".":
-                    tree[step] = new Lexeme(token.Separator, "Dot");
+                    tree[step] = new Lexeme("Dot", token.Separator);
                     ++step; break;
                 case "#":
-                    tree[step] = new Lexeme(token.Separator, "Hash");
+                    tree[step] = new Lexeme("Hash", token.Separator);
                     ++step; break;
                 case "@":
-                    tree[step] = new Lexeme(token.Separator, "At");
+                    tree[step] = new Lexeme("At", token.Separator);
                     ++step; break;
                 case "$":
-                    tree[step] = new Lexeme(token.Separator, "Dollar");
+                    tree[step] = new Lexeme("DollarSign", token.Separator);
                     ++step; break;
-                case "^":
-                    tree[step] = new Lexeme(token.Separator, "Caret");
-                    ++step; break;
-                default:
-
-                    tree[step] = new Lexeme(token.Identifier, lexeme);
+                default: //If the lexeme is not a keyword, operator,  
+                        //separator, number or string, it is an identifier.
+                   identifiers[flag] = lexeme;
+                   tree[step] = new Lexeme(lexeme, flag);
                     ++step; break;
             }
+        }
     }
 }
         
