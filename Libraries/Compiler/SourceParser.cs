@@ -1,7 +1,24 @@
-//This file is responsible for parsing the source code and providing the syntax highlighting.
-namespace Compiler;
-using System.Drawing;
+/*This file is responsible for the basic code analysis on the example
+ * of C#. You can find here enterprise-ready solution for tokenisation 
+ * into lexemes, comment clearing and fetching raw text into colours. */
 using Json;
+using System.Drawing;
+namespace Compiler;
+/// <summary>
+/// These are the aliases for the sorts tokens may represent. It mixes
+/// the general types as operators or keywords with the specific types
+/// that only identifiers may possess, including classes, functions, preprocessors.
+/// </summary>
+public enum token{
+    Keyword, Operator, Separator, String, Number, Boolean, Null, Unknown, Variable, Constant, 
+    Function, Class, Namespace, Enum, Interface, Struct, Property, Field, Method, AccessModifier,
+    Constructor, Destructor, Parameter, Preprocessor,  LeftAngleBracket, RightAngleBracket, 
+    LeftBracket, RightBracket, LeftBrace, RightBrace, LeftParenthesis, RightParenthesis, 
+}
+/// <summary>
+/// Instances of this class are used to store the information about a lexeme.
+/// </summary>
+
 public struct Colours {
     Color Keyword = Color.IndianRed;
     Color Operator = Color.White;
@@ -10,6 +27,14 @@ public struct Colours {
     Color Number = Color.Orange;
     Color Constant = Color.Blue;
     public Colours(){}
+}
+public class Lexeme{
+    public token Type;
+    public string Content;
+    public Lexeme(string content, token type){
+        this.Type = type;
+        this.Content = content;
+    }
 }
 /// <summary>
 /// Encapsulates language-specific information in a separate object. Contains
@@ -35,7 +60,7 @@ public class SourceParser {
     private Language language;
     private string[] lines, lexemes;
     private Dictionary<token, string> identifiers;
-    public SourceParser(string source, Language language) {   //Saves the code in an array of lines.
+    public SourceParser(string source, Language language) { //Saves the code in an array of lines.
         this.lines = File.ReadAllText(source).Split(Environment.NewLine);
         this.identifiers = new Dictionary<token, string>();
         this.lexemes = new string[lines.Length];
