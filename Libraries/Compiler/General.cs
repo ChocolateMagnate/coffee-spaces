@@ -7,10 +7,10 @@ namespace Compiler;
 /// that only identifiers may possess, including classes, functions, preprocessors.
 /// </summary>
 public enum token{
-    Operator, Identifier, Keyword, String, Number, Whitespace, Newline, Unknown,
-    LocalVariable, GlobalVariable, Function, Class, Namespace, Enum,
-    Interface, Struct, Property, Field, Event, Method, Constructor,
-    Destructor, Parameter, Preprocessor
+    Keyword, Operator, Separator, String, Number, Boolean, Null, Unknown, Variable,
+    Constant, Function, Class, Namespace, Enum, Interface, Struct, Property, Field,
+    Method, Constructor, Destructor, Parameter, Preprocessor,  LeftAngleBracket,
+    RightAngleBracket, LeftBracket, RightBracket, LeftBrace, RightBrace, LeftParenthesis, RightParenthesis, 
 }
 /// <summary>
 /// Instances of this class are used to store the information about a lexeme.
@@ -36,7 +36,7 @@ public class SyntaxTree: LinkedList<Lexeme>, IEnumerable<Lexeme>{
 /// This table will serve to record all identifiers along with 
 /// their types to evaluate their displayable colour in the editor.
 /// </summary>
-public class IdentifierTable: List<Lexeme>{
+public class IdentifierTable{
     protected string[] Keywords;
     protected string[] Operators;
     protected string[] Types;
@@ -48,6 +48,9 @@ public class IdentifierTable: List<Lexeme>{
         this.Identifiers = new List<Lexeme>();
         this.Shelves = new Dictionary<token, string>();
     }
+    //// <summary>
+    /// Matches the input lexeme with its respective token type.
+    /// </summary>
     public token Match(string identifier){
         if (this.Keywords.Contains(identifier)) return token.Keyword;
         if (this.Operators.Contains(identifier)) return token.Operator;
@@ -55,7 +58,7 @@ public class IdentifierTable: List<Lexeme>{
         return token.Unknown;
     }
     // Resolve the operator overloading.
-    public Lexeme this[string key, string? filter]{
+    public Lexeme this[string key, string? filter = null]{
         get {}
         set {}
     }
