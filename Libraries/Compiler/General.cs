@@ -54,6 +54,7 @@ public class IdentifierTable: List<Lexeme>{
         foreach (var shelf in this.Shelves) if (shelf.Value.Contains(identifier)) return shelf.Key;
         return token.Unknown;
     }
+    // Resolve the operator overloading.
     public Lexeme this[string key, string? filter]{
         get {}
         set {}
