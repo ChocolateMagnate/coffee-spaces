@@ -14,23 +14,26 @@
 
 @code {
     public int selection { get; set; }
-    public List<string> selectedPlaceholders;
-    private Dictionary<string, List<string>> placeholders;
+    public string[] selectedPlaceholders;
+    private Dictionary<string, string[]> placeholders;
     public Register(){
+        //This constructor is used to generate a random set of placeholders
+        //to display for all users. It changes every time the page is refreshed.
         var rnd = new Random();
-        this.selection = rnd.Next(0, 9); //The random set of placeholders
-        this.placeholders = new Dictionary<string, List<string>> {
-            {"name", new List<string> {"Anabella Baunti", "John Wick", "Jane Boe", "Anna Bell", 
-                "Rick Morty", "Jack Smith", "Bill Whanderson", "Stephanie Sweet", "Casper Spooky", "Sabina Panchenko"}},
-            {"username", new List<string> {"anabella", "johnwick", "janeboe", "annabell", "rickmorty", 
-                "jacksmith", "billwhanderson", "stephaniesweet", "casperspooky", "sabinapanchenko"}},
-            {"email", new List<string> {"@anabella.baunti", "@john.wick", "@jane.boe", "@anna.bell", 
-                "@rick.morty", "@jack.smith", "@bill.whanderson", "@stephanie.sweet", "@casper.spooky", "@sabina.panchenko"}},
-            {"password", new List<string> {"730275", "185205", "937105", "105205", "105835", "028401", 
-                "123456", "0185205", "038502", "074936"}},
-        };
-        this.selectedPlaceholders = new List<string>() { //The selected placeholders 
-            placeholders["name"]    [selection],         //to reference in the UI
+        this.selection = rnd.Next(0, 9);
+
+        this.placeholders = new Dictionary<string, string[]>();
+        this.placeholders.Add("name", new string[] {"Anabella Baunti", "John Wick", "Jane Boe", "Anna Bell", 
+                "Rick Morty", "Jack Smith", "Bill Whanderson", "Stephanie Sweet", "Casper Spooky", "Sabina Panchenko"});
+        this.placeholders.Add("username", new string[] {"anabella", "johnwick", "janeboe", "annabell", "rickmorty", 
+                "jacksmith", "billwhanderson", "stephaniesweet", "casperspooky", "sabinapanchenko"});
+        this.placeholders.Add("email", new string[] {"@anabella.baunti", "@john.wick", "@jane.boe", "@anna.bell", 
+                "@rick.morty", "@jack.smith", "@bill.whanderson", "@stephanie.sweet", "@casper.spooky", "@sabina.panchenko"});
+        this.placeholders.Add("password", new string[] {"730275", "185205", "937105", "105205", "105835", "028401", 
+                "123456", "0185205", "038502", "074936"});
+    
+        this.selectedPlaceholders = new string[] {   //The selected placeholders 
+            placeholders["name"]    [selection],     //to reference in the UI.
             placeholders["username"][selection],
             placeholders["email"]   [selection],
             placeholders["password"][selection],

@@ -232,68 +232,35 @@
         }
       },
       {
-        "HashCode": -538975175,
+        "HashCode": -931797917,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.Pages.Register",
+        "Name": "coffee_spaces.Client_side.App",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Register"
+            "TagName": "App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.Pages.Register"
+          "Common.TypeName": "coffee_spaces.Client_side.App"
         }
       },
       {
-        "HashCode": -550690502,
+        "HashCode": 2137683141,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.Pages.Register",
+        "Name": "coffee_spaces.Client_side.App",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "coffee_spaces.Client_side.Pages.Register"
+            "TagName": "coffee_spaces.Client_side.App"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.Pages.Register",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1676276629,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.Pages.Index",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.Pages.Index"
-        }
-      },
-      {
-        "HashCode": 1457721353,
-        "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.Pages.Index",
-        "AssemblyName": "coffee-spaces",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "coffee_spaces.Client_side.Pages.Index"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.Pages.Index",
+          "Common.TypeName": "coffee_spaces.Client_side.App",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -331,35 +298,68 @@
         }
       },
       {
-        "HashCode": -931797917,
+        "HashCode": 1676276629,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.App",
+        "Name": "coffee_spaces.Client_side.Pages.Index",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "App"
+            "TagName": "Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.App"
+          "Common.TypeName": "coffee_spaces.Client_side.Pages.Index"
         }
       },
       {
-        "HashCode": 2137683141,
+        "HashCode": 1457721353,
         "Kind": "Components.Component",
-        "Name": "coffee_spaces.Client_side.App",
+        "Name": "coffee_spaces.Client_side.Pages.Index",
         "AssemblyName": "coffee-spaces",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "coffee_spaces.Client_side.App"
+            "TagName": "coffee_spaces.Client_side.Pages.Index"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "coffee_spaces.Client_side.App",
+          "Common.TypeName": "coffee_spaces.Client_side.Pages.Index",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -538975175,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Client_side.Pages.Register",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Register"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Client_side.Pages.Register"
+        }
+      },
+      {
+        "HashCode": -550690502,
+        "Kind": "Components.Component",
+        "Name": "coffee_spaces.Client_side.Pages.Register",
+        "AssemblyName": "coffee-spaces",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "coffee_spaces.Client_side.Pages.Register"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "coffee_spaces.Client_side.Pages.Register",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
