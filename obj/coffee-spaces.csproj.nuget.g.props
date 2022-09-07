@@ -14,8 +14,10 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)/microsoft.aspnetcore.components.webassembly/6.0.6/build/net6.0/Microsoft.AspNetCore.Components.WebAssembly.props" Condition="Exists('$(NuGetPackageRoot)/microsoft.aspnetcore.components.webassembly/6.0.6/build/net6.0/Microsoft.AspNetCore.Components.WebAssembly.props')" />
+    <Import Project="$(NuGetPackageRoot)/entityframework/6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.props" Condition="Exists('$(NuGetPackageRoot)/entityframework/6.4.4/buildTransitive/netcoreapp3.0/EntityFramework.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer Condition=" '$(PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer)' == '' ">/var/nuget/microsoft.aspnetcore.components.webassembly.devserver/6.0.6</PkgMicrosoft_AspNetCore_Components_WebAssembly_DevServer>
+    <PkgEntityFramework Condition=" '$(PkgEntityFramework)' == '' ">/var/nuget/entityframework/6.4.4</PkgEntityFramework>
   </PropertyGroup>
 </Project>

@@ -18,30 +18,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /workspaces/coffee-spaces
 build_property._RazorSourceGeneratorDebug = 
 
-[/workspaces/coffee-spaces/App.razor]
-build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+[/workspaces/coffee-spaces/Client-side/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2xpZW50LXNpZGUvQXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/coffee-spaces/Pages/Index.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+[/workspaces/coffee-spaces/Client-side/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2xpZW50LXNpZGUvUGFnZXMvSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/coffee-spaces/Pages/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+[/workspaces/coffee-spaces/Client-side/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2xpZW50LXNpZGUvUGFnZXMvTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/coffee-spaces/Pages/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUmVnaXN0ZXIucmF6b3I=
+[/workspaces/coffee-spaces/Client-side/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2xpZW50LXNpZGUvUGFnZXMvUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/workspaces/coffee-spaces/_Imports.razor]
-build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+[/workspaces/coffee-spaces/Client-side/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q2xpZW50LXNpZGUvX0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
-
-[/workspaces/coffee-spaces/Shared/MainLayout.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-41b8jzmksw
-
-[/workspaces/coffee-spaces/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-y7bd9ykvcc
